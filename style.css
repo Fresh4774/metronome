@@ -1,0 +1,221 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
+@import url(//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css);
+body {
+  background: #000000;
+  font-family: "Open Sans", sans-serif;
+}
+
+input[type=range] {
+  -webkit-appearance: none !important;
+  max-height: 3px;
+  position: relative;
+  top: -3px;
+  background: rgb(0, 0, 0);
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  top: -1px;
+  background: #222;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox] + label {
+  display: inline-block !important;
+  height: 15px;
+  width: 15px;
+  margin: 0px 4px 0px 0px !important;
+  padding: 0px;
+  position: relative;
+  top: 4px;
+  background: rgb(58, 61, 70);
+  cursor: pointer;
+}
+input[type=checkbox] + label:before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 8px;
+  background: #00f5bc;
+  opacity: 0;
+  position: relative;
+  top: -5px;
+  right: -1px;
+  transform: skewX(0deg);
+  transition: all 0.24s;
+}
+input[type=checkbox] + label:after {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 15px;
+  background: #00f5bc;
+  opacity: 0;
+  position: relative;
+  top: -5px;
+  right: -3px;
+  transform: skewX(0deg);
+  transition: all 0.24s;
+}
+
+input[type=checkbox]:checked + label:before {
+  transform: skewX(30deg);
+  opacity: 1;
+}
+input[type=checkbox]:checked + label:after {
+  transform: skewX(-30deg);
+  opacity: 1;
+}
+
+.container {
+  width: 100%;
+}
+
+header {
+  height: 65px;
+  background: #3c3e3d;
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 400;
+  text-align: center;
+  padding: 5px;
+}
+
+.metronome-container {
+  width: 75%;
+  height: auto;
+  position: relative;
+  margin: 40px auto;
+  background: #2f2f2f;
+}
+.metronome-container .options-btn {
+  color: #FFF;
+  font-size: 22px;
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  transform: rotateZ(0deg);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.metronome-container .options-btn:hover {
+  transform: rotateZ(60deg);
+}
+.metronome-container .options-active {
+  max-height: 1000px !important;
+  padding: 15px;
+  overflow: visible !important;
+}
+.metronome-container .options {
+  max-height: 0px;
+  background: #FFF;
+  color: #333;
+  overflow: hidden;
+  transition: all 0.25s;
+  position: absolute;
+  top: 50px;
+  right: 15px;
+}
+.metronome-container .options .up {
+  color: #FFF;
+  font-size: 22px;
+  position: absolute;
+  top: -14px;
+  right: 3px;
+  z-index: 500;
+  transform: rotateZ(180deg);
+}
+.metronome-container .options label {
+  display: block;
+  margin-top: 10px;
+}
+.metronome-container .counter {
+  width: 100%;
+  padding-bottom: 10px;
+  background: #404040;
+  text-align: center;
+}
+.metronome-container .counter .dot {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin: 25px 10px 10px 10px;
+  background: #FFF;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.metronome-container .counter .active {
+  background: #00f5bc;
+}
+.metronome-container .controls {
+  color: #FFF;
+  padding: 20px;
+  text-align: center;
+}
+.metronome-container .controls label {
+  display: block;
+  margin-bottom: 18px;
+}
+.metronome-container .controls label span {
+  background: #FFF;
+  color: #222;
+  padding: 5px;
+}
+.metronome-container .controls label span i {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.metronome-container .controls label span i:hover {
+  color: #0d8d6b;
+}
+.metronome-container .controls input {
+  width: 30px;
+  border: 0px solid;
+  color: #222;
+  text-align: center;
+  padding: 4px;
+}
+.metronome-container .controls select {
+  border: 0px;
+  color: #222;
+}
+.metronome-container .controls .play-btn {
+  width: 45%;
+  background: #0051ff;
+  border: 0px;
+  border-radius: 5px;
+  padding: 12px;
+  color: #3d430d;
+  transition: background 0.3s;
+}
+.metronome-container .controls .play-btn:hover {
+  background: #33ff00;
+}
+.metronome-container .controls .tap-btn {
+  width: 45%;
+  background: #888;
+  border: 0px;
+  border-radius: 5px;
+  padding: 12px;
+  color: #fbfbfb;
+  transition: background 0.3s;
+}
+.metronome-container .controls .tap-btn:hover {
+  background: #959595;
+}
+
+footer {
+  width: 50%;
+  height: auto;
+  background: #FFF;
+  color: #444;
+  padding: 10px;
+  margin: 50px auto;
+}
